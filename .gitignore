@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# SwiftPM
+.swiftpm/
+.build/
+
+# Xcode
+DerivedData/
+xcuserdata/
+
+# Logs
+*.log
