@@ -19,6 +19,7 @@ import CurrencyField
 struct ContentView: View {
     @State private var frAmount: Decimal = 0
     @State private var usAmount: Decimal = 0
+    @FocusState private var isFocused: Bool
 
     var body: some View {
         VStack(alignment: .trailing, spacing: 16) {
@@ -29,6 +30,10 @@ struct ContentView: View {
             Text("US (en_US)")
             CurrencyFieldView(amount: $usAmount, locale: .init(identifier: "en_US"))
                 .frame(width: 220)
+                .focused($isFocused)
+                .onAppear {
+                    isFocused = true
+                }
         }
         .padding()
         .multilineTextAlignment(.trailing)
